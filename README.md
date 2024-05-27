@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+<h1>Для запуска склонировать репозиторий, в корне проекта выполнить:</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+npm install # установка зависимостей
+npm run dev # запуск проекта по адресу http://localhost:5173/
+# для билда использовать npm run build, далее в папке dist нужно развернуть http сервер
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Картинки находятся в public, массив с данными в src/assets
+
+<h2>После выполнения работы необходимо проанализировать, можно ли было бы упростить\оптимизировать данный интерфейс, если бы структура массива была иной.
+К работе следует приложить письменный ответ с предложенной структурой.</h2>
+
+У нас есть данная структура массива:
+
+```
+[
+    { "category_name": "ai", "img_path": "/images/img1.jpg" },
+    { "category_name": "ai", "img_path": "/images/img2.jpg" },
+    { "category_name": "web dev", "img_path": "/images/img15.jpg" },
+    { "category_name": "web dev", "img_path": "/images/img16.jpg" },
+]
+```
+
+Чтобы улучшить производительность приложения, нам нужно избавиться от фильтрации всего массива при изменении фильтра. В предлагаемой структуре все категории объединены, что позволяет сразу получить доступ к необходимой категории. Так же легче добавлять новые категории
+
+```
+{
+    "ai": [
+        { "img_path": "./images/img1.jpg" },
+        { "img_path": "./images/img5.jpg" },
+    ],
+    "web dev": [
+        { "img_path": "./images/img2.jpg" },
+        { "img_path": "./images/img6.jpg" },
+    ],
+}
+
+```
+
+Оптимизация получается путем удаления из компонента данного участка кода
+
+```js
+useEffect(() => {
+    const categories = Array.from(new Set(array.map(item => item.category_name)))
+    setCategories(categories)
+}, [])
+```

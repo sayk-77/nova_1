@@ -14,7 +14,7 @@ interface Element {
 export const HomePage: React.FC = () => {
     const [filter, setFilter] = useState<string>('all')
     const [arrayElements, setArrayElements] = useState<Element[]>([])
-    const [categories, setCategories] = useState<string[]>([])
+    const [categories, setCategories] = useState<string[]>([]);
 
     useEffect(() => {
         if (filter === 'all') {
@@ -30,14 +30,14 @@ export const HomePage: React.FC = () => {
     }
 
     useEffect(() => {
-        const categories = Array.from(new Set(array.map(item => item.category_name)))
-        setCategories(categories)
-    }, [])
+        const categories = Array.from(new Set(array.map(item => item.category_name)));
+        setCategories(categories);
+    }, []);
 
     return (
         <>
             <Title />
-            <Filter getNewFilter={changeFilter} categories={categories} />
+            <Filter getNewFilter={changeFilter} categories={categories}/>
             <div className={styles.content}>
                 {arrayElements.length !== 0 ? (
                     arrayElements.map((el, index) => <ContentCard key={index} element={el} />)
