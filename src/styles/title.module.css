@@ -1,0 +1,17 @@
+.title {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 0;
+    flex-direction: column;
+}
+
+.title > h2 {
+    letter-spacing: 3px;
+    font-size: 24px;
+}
+
+.title > p {
+    opacity: 0.5;
+    font-size: 20;
+}

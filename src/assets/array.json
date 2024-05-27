@@ -1,0 +1,22 @@
+[
+    { "category_name": "ai", "img_path": "/images/img1.jpg" },
+    { "category_name": "ai", "img_path": "/images/img2.jpg" },
+    { "category_name": "ai", "img_path": "/images/img3.jpg" },
+    { "category_name": "ai", "img_path": "/images/img4.jpg" },
+    { "category_name": "ai", "img_path": "/images/img5.jpg" },
+    { "category_name": "game dev", "img_path": "/images/img6.jpg" },
+    { "category_name": "game dev", "img_path": "/images/img7.jpg" },
+    { "category_name": "game dev", "img_path": "/images/img8.jpg" },
+    { "category_name": "game dev", "img_path": "/images/img9.jpg" },
+    { "category_name": "game dev", "img_path": "/images/img10.jpg" },
+    { "category_name": "mobile dev", "img_path": "/images/img11.jpg" },
+    { "category_name": "mobile dev", "img_path": "/images/img12.jpg" },
+    { "category_name": "mobile dev", "img_path": "/images/img13.jpg" },
+    { "category_name": "mobile dev", "img_path": "/images/img14.jpg" },
+    { "category_name": "web dev", "img_path": "/images/img15.jpg" },
+    { "category_name": "web dev", "img_path": "/images/img16.jpg" },
+    { "category_name": "web dev", "img_path": "/images/img17.jpg" },
+    { "category_name": "web dev", "img_path": "/images/img18.jpg" },
+    { "category_name": "desktop dev", "img_path": "/images/img19.jpg" },
+    { "category_name": "desktop dev", "img_path": "/images/img20.jpg" }
+]

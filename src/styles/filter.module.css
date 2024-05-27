@@ -1,0 +1,15 @@
+.filter {
+    display: flex;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.filter > p {
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 2px solid green;
+}
